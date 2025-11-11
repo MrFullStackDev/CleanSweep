@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanSweep - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CleanSweep 🧹</h1>
+      <p class="subtitle">Configure what to clear and where</p>
+    </header>
+
+    <main>
+      <!-- Scope Selection -->
+      <section class="card">
+        <h2>Clearing Scope</h2>
+        <p class="description">Choose whether to clear data for the current site only or all sites</p>
+        
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="scope" value="current" id="scopeCurrent">
+            <span class="radio-label">
+              <strong>Current Site Only</strong>
+              <small>Clears data only for the active tab's website</small>
+            </span>
+          </label>
+          
+          <label class="radio-option">
+            <input type="radio" name="scope" value="all" id="scopeAll">
+            <span class="radio-label">
+              <strong>All Sites</strong>
+              <small>Clears data for all websites</small>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Data Types to Clear -->
+      <section class="card">
+        <h2>Data to Clear</h2>
+        <p class="description">Select which types of data to clear when clicking the extension icon</p>
+        
+        <div class="toggle-list">
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Cookies</strong>
+              <small>Website cookies and authentication data</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearCookies">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Cache</strong>
+              <small>Cached images, scripts, and other files</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearCache">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Local Storage</strong>
+              <small>Local storage data stored by websites</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearLocalStorage">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Session Storage</strong>
+              <small>Temporary session data</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearSessionStorage">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>IndexedDB</strong>
+              <small>Indexed database storage</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearIndexedDB">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Service Workers</strong>
+              <small>Background service workers and their caches</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearServiceWorkers">
+              <span class="slider"></span>
+            </label>
+          </label>
+
+          <label class="toggle-item">
+            <div class="toggle-info">
+              <strong>Browsing History</strong>
+              <small>Browser history entries</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearHistory">
+              <span class="slider"></span>
+            </label>
+          </label>
+        </div>
+      </section>
+
+      <!-- Status -->
+      <section class="card status-card">
+        <div id="statusMessage" class="status-message"></div>
+        <div id="lastCleared" class="last-cleared"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Click the extension icon to clear selected data</p>
+    </footer>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
+

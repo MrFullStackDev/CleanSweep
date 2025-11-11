@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanSweep</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>CleanSweep</h1>
+    </div>
+
+    <div class="content">
+      <div class="mode-indicator" id="modeIndicator">
+        <div class="mode-icon">🌐</div>
+        <div class="mode-text">
+          <strong id="modeTitle">Current Site</strong>
+          <span id="modeDescription">Clearing data for this site only</span>
+        </div>
+      </div>
+
+      <div class="info-section" id="activeItems">
+        <div class="info-label">Active Items:</div>
+        <div class="items-list" id="itemsList"></div>
+      </div>
+
+      <div class="status-section" id="statusSection">
+        <div class="status-icon">✓</div>
+        <div class="status-text">Data cleared successfully!</div>
+      </div>
+
+      <div class="last-cleared" id="lastCleared"></div>
+    </div>
+
+    <div class="footer">
+      <button class="settings-btn" id="settingsBtn">
+        <span class="settings-icon">⚙</span>
+        Settings
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
