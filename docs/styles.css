@@ -820,17 +820,25 @@ a:hover {
 .footer {
     background: var(--gray-900);
     color: var(--gray-300);
-    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+    padding: var(--spacing-3xl) 0 var(--spacing-xl);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 640px) {
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -838,7 +846,7 @@ a:hover {
 }
 
 .footer-brand {
-    max-width: 300px;
+    max-width: 320px;
 }
 
 .footer-logo {
@@ -848,18 +856,19 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .footer-tagline {
     color: var(--gray-400);
     line-height: 1.7;
+    font-size: 0.9375rem;
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
 }
 
 .footer-heading {
@@ -867,13 +876,20 @@ a:hover {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+/* Add top margin to headings in all columns except the first one */
+.footer-column:not(:first-child) .footer-heading {
+    margin-top: var(--spacing-xl);
 }
 
 .footer-link {
     color: var(--gray-400);
     transition: color var(--transition-fast);
     font-size: 0.9375rem;
+    line-height: 1.8;
 }
 
 .footer-link:hover {
@@ -882,18 +898,19 @@ a:hover {
 
 .footer-bottom {
     border-top: 1px solid var(--gray-800);
-    padding-top: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 }
 
 @media (max-width: 640px) {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        gap: var(--spacing-sm);
     }
 }
 
@@ -901,11 +918,13 @@ a:hover {
 .footer-credit {
     color: var(--gray-500);
     font-size: 0.875rem;
+    line-height: 1.6;
 }
 
 .footer-author {
     color: var(--accent-light);
     font-weight: 600;
+    transition: color var(--transition-fast);
 }
 
 .footer-author:hover {
@@ -917,12 +936,10 @@ a:hover {
    =================================== */
 
 .fade-in {
-    opacity: 0;
     animation: fadeIn var(--transition-slow) ease-out forwards;
 }
 
 .fade-in-delay {
-    opacity: 0;
     animation: fadeIn var(--transition-slow) ease-out 300ms forwards;
 }
 
@@ -935,6 +952,12 @@ a:hover {
 .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Make hero content visible immediately on page load */
+.hero .fade-in,
+.hero .fade-in-delay {
+    opacity: 1;
 }
 
 @keyframes fadeIn {
