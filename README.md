@@ -41,10 +41,6 @@ A fast, minimalist Chrome extension for clearing cookies, cache, and browsing da
    - Click the Extensions icon in Chrome toolbar
    - Pin "CleanSweep" for easy access
 
-### From Chrome Web Store
-
-*Coming soon - CleanSweep will be available on Chrome Web Store*
-
 ## Usage
 
 ### Basic Usage
